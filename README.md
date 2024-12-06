@@ -11,6 +11,7 @@ This is a Python-based text search engine that uses TF-IDF (Term Frequency-Inver
 Before running the project, ensure you have the following installed:
 
 - Python 3.8+
+
 Required Python libraries:
   - nltk
   - scikit-learn
