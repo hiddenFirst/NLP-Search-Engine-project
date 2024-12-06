@@ -22,7 +22,7 @@ Required Python libraries:
 - Download the project files to your local machine.
 
 2. Prepare the Data
-   make sure your text file is all in the """SimpleText_auto""" folder
+   make sure your text file is all in the ”””SimpleText_auto””” folder
    make sure '''SimpleText_auto''' folder is in the same path with """search_engine.py"""
 
 3. Run the Program
