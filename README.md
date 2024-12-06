@@ -22,23 +22,23 @@ Required Python libraries:
 - Download the project files to your local machine.
 
 2. Prepare the Data
-   make sure your text file is all in the ”””SimpleText_auto””” folder
-   make sure '''SimpleText_auto''' folder is in the same path with """search_engine.py"""
+   make sure your text file is all in the ```SimpleText_auto``` folder
+   make sure ```SimpleText_auto``` folder is in the same path with ```search_engine.py```
 
 3. Run the Program
    Execute the program in cmd:
-   """
+   ```
    python search_engine.py
-   """
+   ```
 
 # File Structure
-'''
+```
 project/
 │
 ├── search_engine.py        # Main program file
 ├── /SimpleText_auto/       # Folder containing text files (data source)
 └── README.md               # Project description and usage guide
-'''
+```
 
 # Project Workflow
 1. Load Documents:
