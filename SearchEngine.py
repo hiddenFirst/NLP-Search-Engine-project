@@ -1,5 +1,6 @@
 import os
 import re
+import webbrowser
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from nltk.tokenize import word_tokenize, sent_tokenize
@@ -51,6 +52,10 @@ def search_query(query, vectorizer, tfidf_matrix, doc_names, top_n=5):
     results = [(doc_names[i], similarities[i]) for i in ranked_indices]
     return results
 
+def display_doc(doc_name):
+    full_path = os.path.abspath(f"SimpleText_auto/{doc_name}")
+    webbrowser.open(f"file:///{full_path}")
+
 def main():
     # Step 1: Load all Document
     print("Loading Document...")
@@ -65,7 +70,7 @@ def main():
     # Step 3: Enter search mode
     print("Search engine started! Type 'exit' to exit.")
     while True:
-        query = input("Please enter your search query:")
+        query = input("Please enter your search query: ")
         if query.lower() == 'exit':
             print("Thanks for using, the search engine has been closed!")
             break
@@ -73,6 +78,14 @@ def main():
         print("Search results:")
         for i, (doc_name, score) in enumerate(results):
             print(f"{i+1}. Document Name: {doc_name} | Similarity: {score:.4f}")
+
+        # Step 4: Enter view mode
+        print("View mode started! Hit 'enter' to exit.")
+        while True:
+            query = input("Enter the number of the document to view: ")
+            if not query:
+                break
+            display_doc(results[int(query) - 1][0])
 
 if __name__ == "__main__":
     main()
