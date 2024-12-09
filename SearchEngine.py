@@ -53,6 +53,7 @@ def search_query(query, vectorizer, tfidf_matrix, doc_names, top_n=5):
     return results
 
 def display_doc(doc_name):
+    """Open text file from corpus"""
     full_path = os.path.abspath(f"SimpleText_auto/{doc_name}")
     webbrowser.open(f"file:///{full_path}")
 
