@@ -44,7 +44,7 @@ def build_tfidf_index(documents):
     tfidf_matrix = vectorizer.fit_transform(doc_texts)
     return vectorizer, tfidf_matrix, doc_names
 
-def search_query(query, vectorizer, tfidf_matrix, doc_names, top_n=5):
+def search_query(query, vectorizer, tfidf_matrix, doc_names, top_n=10):
     """Search query and return relevant documents"""
     query_vector = vectorizer.transform([preprocess_text(query)])
     similarities = cosine_similarity(query_vector, tfidf_matrix).flatten()
@@ -78,7 +78,10 @@ def main():
         results = search_query(query, vectorizer, tfidf_matrix, doc_names)
         print("Search results:")
         for i, (doc_name, score) in enumerate(results):
-            print(f"{i+1}. Document Name: {doc_name} | Similarity: {score:.4f}")
+            with open(f'{FOLDER_PATH}/{doc_name}') as doc:
+                title = doc.readline()
+                print(f"{i+1}. Title: {title}", end = "")
+                print(f"- Similarity: {score:.4f}")
 
         # Step 4: Enter view mode
         print("View mode started! Hit 'enter' to exit.")
