@@ -28,7 +28,7 @@ Required Python libraries:
 3. Run the Program
    Execute the program in cmd:
    ```
-   python search_engine.py
+   python SearchEngine.py
    ```
 
 # File Structure
