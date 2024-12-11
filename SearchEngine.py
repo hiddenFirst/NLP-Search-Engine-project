@@ -78,7 +78,7 @@ def main():
         results = search_query(query, vectorizer, tfidf_matrix, doc_names)
         print("Search results:")
         for i, (doc_name, score) in enumerate(results):
-            with open(f'{FOLDER_PATH}/{doc_name}') as doc:
+            with open(f'{FOLDER_PATH}/{doc_name}', encoding='utf-8') as doc:
                 title = doc.readline()
                 print(f"{i+1}. Title: {title}", end = "")
                 print(f"- Similarity: {score:.4f}")
